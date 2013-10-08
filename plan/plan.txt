@@ -1,0 +1,133 @@
+poka
+http://www.student.tw/forum23/thread174156.html
+
+http://www.ericfo.com.tw/SMAUSW/
+
+online DB
+管理員帳號及權限設定
+住戶管理	res*
+門禁卡管理	key*
+商家管理	house_shop 哪個商家在哪個地址
+
+
+
+
+[系統規格]
+CodeIgniter	2.1.4
+PHP		5.3.3
+MySQL		5.1.69
+
+
+
+[功能]
+1. 設定
+	a. 設定社區的IP白名單
+	b. 設定社區的帳號前後綴、資料庫名稱
+	c. 設定社區名字、網址
+	d. 每個社區首頁能顯示的選單及次選單
+2. 根據興趣顯示住戶 email 及 店家
+3. 每個社區對應的商店
+	為了讓使用者輸入資料時可選擇	ae.aexree.com.tw
+
+[其他]
+網址管理 GoDaddy
+MyISAM => InnoDB
+http://stackoverflow.com/questions/3856435/how-to-convert-all-tables-from-myisam-into-innodb
+MySQL Backup
+http://veryi.com/w/63.html
+http://g.51cto.com/vfast/245370/3
+
+[注意] InnoDB
+1. InnoDB 做 count(*) 時, 有 where 時和 MyISAM 一樣要掃全表, 無 where 性能比 MyISAM 差
+2. delete 時 InnoDB 會一行行刪除, MyISAM 會重新建立表
+3. 執行 SQL 時 MYSQL 不能確定掃描範圍, InnoDB 會鎖全表
+4. InnoDB where Primity Key 才會鎖 row
+
+[SEO]
+1. http://seo.dns.com.tw/?p=155
+2. meta
+http://blog.sina.com.cn/s/blog_666689090101bg8p.html
+
+[DNS]
+http://www.9bi.com.cn/post/24.html
+
+[效能及技術問題]
+1. 寄簡訊 queue
+	php message queue: Gearman
+2. RAM 不夠調整 MySQL 效能
+	a. 查詢量大&不常變動資料的頁面，使用暫存頁面減少 DB 存取次數
+	b. 將 Table Type 從 MyISAM 換成 InnoDB
+		frequent select queries 		=> MyISAM
+		frequent insert,update,delete	=> InnoDB
+		mycom.login_log
+		?*.mail 會使用到刪除的動作?
+	c. *.resident 和 *.resident_shop 欄位重複性太高
+3. google picasa flash player => html5
+	google feed api
+
+[問題]
+1. 目前新增一個社區的流程？
+	a. 後台新增社區(並設定網域名稱) => 完成
+	b. 後台新增社區(並設定網域名稱) => 請易利華設定 DNS => 完成
+2. 員工管理, 隸屬區域, 管轄區域 有在使用?
+3. 員工管理, 部門 有在使用?
+
+[流程]
+1. [問題]
+2. [效能及技術問題]2
+3. 
+
+社區管理
+	社區基本資料
+		原 DB => cache => show，如果需要被 update($_POST != cached_data) 才 conn db
+	網址對應	=> 用 DNS 設定, 避免檔案實際路徑被爬蟲爬到、利於 SEO
+	總幹事提醒
+	最新公告
+	活動報報
+	發燒分享
+	其他連結設定
+	記錄 blogger 帳密
+住戶資料
+	為了後續的功能([功能]2: 根據興趣顯示住戶 email 及 店家)
+	做 cache，時間過了一個小時才重新至所有社區的 DB 抓取資料
+店家管理
+Email
+	根據興趣查住戶 email, 店家
+發簡訊
+	[效能及技術問題]1
+
+[程式]
+model
+library
+	gearman	# message queue
+	database
+		先過慮 0x, 再跑其他過慮函數
+	cache
+		http://justcoding.iteye.com/blog/582987
+controller
+view
+assert
+
+[架構設計]
+1. htaccess
+	http://undefinedblog.com/2012/04/%E5%88%A9%E7%94%A8-htaccess%E6%96%87%E4%BB%B6%E5%B0%86%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%87%B3%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/
+	http://www.sky84.cn/blog/archives/132.html
+
+[Test]
+1. autoload 會將 library|model 做 reference 到 $this ?
+2. admin 功能要怎麼切成數個檔案, 還是要寫在同個檔案?
+	a. always top: 標題、帳號設定、登入/登出 (Mega)
+	b. left:
+		樹狀
+		往左隱藏 為了右邊足夠大的位置顯示表格
+	c. right:
+		麵包屑
+	d: message queue: 處理事情的 queue
+3. google analyze
+
+
+
+
+
+
+

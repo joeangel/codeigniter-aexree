@@ -1,0 +1,197 @@
+# ab -n 100 -c 100 http://ae.aexree.com.tw/index.php # 2013/10/03 晚上
+Server Software:        Apache/2.2.15
+Server Hostname:        ae.aexree.com.tw
+Server Port:            80
+
+Document Path:          /index.php
+Document Length:        3203 bytes
+
+Concurrency Level:      100
+Time taken for tests:   6.299 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      375400 bytes
+HTML transferred:       320300 bytes
+Requests per second:    15.88 [#/sec] (mean)
+Time per request:       6298.605 [ms] (mean)
+Time per request:       62.986 [ms] (mean, across all concurrent requests)
+Transfer rate:          58.20 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       19   33   7.7     35      46
+Processing:   106 1507 1561.0    880    6268
+Waiting:       97 1376 1434.0    856    6222
+Total:        128 1540 1557.8    921    6297
+
+Percentage of the requests served within a certain time (ms)
+  50%    921
+  66%   1161
+  75%   2836
+  80%   2902
+  90%   3738
+  95%   6260
+  98%   6288
+  99%   6297
+ 100%   6297 (longest request)
+
+# ab -n 100 -c 100 http://ae.aexree.com.tw/index.php # 2013/10/04 08:47
+Server Software:        Apache/2.2.15
+Server Hostname:        ae.aexree.com.tw
+Server Port:            80
+
+Document Path:          /index.php
+Document Length:        3203 bytes
+
+Concurrency Level:      100
+Time taken for tests:   1.953 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      375400 bytes
+HTML transferred:       320300 bytes
+Requests per second:    51.21 [#/sec] (mean)
+Time per request:       1952.555 [ms] (mean)
+Time per request:       19.526 [ms] (mean, across all concurrent requests)
+Transfer rate:          187.75 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       21   35   7.5     36      48
+Processing:   101  904 477.9    920    1906
+Waiting:       93  830 459.5    829    1877
+Total:        125  939 482.3    959    1949
+
+Percentage of the requests served within a certain time (ms)
+  50%    959
+  66%   1236
+  75%   1362
+  80%   1440
+  90%   1543
+  95%   1695
+  98%   1844
+  99%   1949
+ 100%   1949 (longest request)
+
+
+
+
+
+# ab -n 100 -c 100 http://wxg22f.aexree.com.tw/ # 2013/10/04 08:48
+Server Software:        Apache/2.2.15
+Server Hostname:        wxg22f.aexree.com.tw
+Server Port:            80
+
+Document Path:          /
+Document Length:        17429 bytes
+
+Concurrency Level:      100
+Time taken for tests:   9.640 seconds
+Complete requests:      100
+Failed requests:        0
+Write errors:           0
+Total transferred:      1774900 bytes
+HTML transferred:       1742900 bytes
+Requests per second:    10.37 [#/sec] (mean)
+Time per request:       9639.832 [ms] (mean)
+Time per request:       96.398 [ms] (mean, across all concurrent requests)
+Transfer rate:          179.81 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       18   33   7.3     33      45
+Processing:   295 4615 2190.5   5429    9611
+Waiting:       91 3001 1788.1   3097    6704
+Total:        315 4648 2194.7   5471    9638
+
+Percentage of the requests served within a certain time (ms)
+  50%   5471
+  66%   6055
+  75%   6381
+  80%   6536
+  90%   7003
+  95%   7271
+  98%   8124
+  99%   9638
+ 100%   9638 (longest request)
+
+# ab -n 50 -c 50 http://wxg22f.aexree.com.tw/ # 2013/10/04 08:51
+Server Software:        Apache/2.2.15
+Server Hostname:        wxg22f.aexree.com.tw
+Server Port:            80
+
+Document Path:          /
+Document Length:        17429 bytes
+
+Concurrency Level:      50
+Time taken for tests:   5.044 seconds
+Complete requests:      50
+Failed requests:        0
+Write errors:           0
+Total transferred:      887450 bytes
+HTML transferred:       871450 bytes
+Requests per second:    9.91 [#/sec] (mean)
+Time per request:       5043.655 [ms] (mean)
+Time per request:       100.873 [ms] (mean, across all concurrent requests)
+Transfer rate:          171.83 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       62   68   3.2     67      73
+Processing:  1173 3327 1146.0   3739    4968
+Waiting:      944 2300 893.5   2088    4830
+Total:       1235 3395 1148.0   3809    5041
+
+Percentage of the requests served within a certain time (ms)
+  50%   3809
+  66%   4091
+  75%   4332
+  80%   4495
+  90%   4847
+  95%   4873
+  98%   5041
+  99%   5041
+ 100%   5041 (longest request)
+
+# ab -n 300 -c 50 http://wxg22f.aexree.com.tw/ # 2013/10/04 08:50
+Server Software:        Apache/2.2.15
+Server Hostname:        wxg22f.aexree.com.tw
+Server Port:            80
+
+Document Path:          /
+Document Length:        17429 bytes
+
+Concurrency Level:      50
+Time taken for tests:   29.244 seconds
+Complete requests:      300
+Failed requests:        0
+Write errors:           0
+Total transferred:      5324700 bytes
+HTML transferred:       5228700 bytes
+Requests per second:    10.26 [#/sec] (mean)
+Time per request:       4874.021 [ms] (mean)
+Time per request:       97.480 [ms] (mean, across all concurrent requests)
+Transfer rate:          177.81 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:       18  546 1163.0     72    9070
+Processing:   137 3036 3577.2   2048   21405
+Waiting:       37 1147 2556.8    394   16681
+Total:        180 3582 3767.5   2457   22209
+
+Percentage of the requests served within a certain time (ms)
+  50%   2457
+  66%   3492
+  75%   4412
+  80%   5154
+  90%   7183
+  95%  11422
+  98%  19293
+  99%  20087
+ 100%  22209 (longest request)
+
+
+
+

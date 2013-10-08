@@ -1,0 +1,137 @@
+
+
+1. 易利華後台密碼修正了
+2. mysql query 流量問題
+3. 多少功能要重寫 & 重寫的必要性
+個人資料
+權限管理
+社區大樓
+	總幹事提醒
+	ADD
+	EDIT
+	編輯管轄社區
+	最新消息
+	活動報報
+	發燒分享
+	社區店家設定
+網站資訊
+店家管理
+	ADD
+	EDIT
+社區住戶
+	ADD
+	LIST
+	郵件
+轄下社區
+租售徵才
+
+
+
+
+
+
+
+http://www.ericfo.com.tw/SMAUSW/
+
+HomePage: PEdit
+
+PEdit		個人資料
+	*Employee/PEdit		個人資料
+Authority	權限管理
+	*index				權限管理
+	Authority_Edit		系統管理員
+	Authority_Group		權限群組
+Employee	員工管理
+	*PList				員工管理
+	List				瀏覽員工
+		Member/index_P1		員工轄下社區
+	Add			新增員工
+	DepartmentType		部門設定
+	ListInfo			在職狀態
+	Position			職務設定
+	Position_Link		職務權限設定
+	Position_Person		轄下員工#無功能
+	List_E				編輯員工
+Building	社區大樓
+	*index			社區大樓
+		One				社區資訊
+		Show1				列印
+		Show2				預覽*社區網站
+		Show2				新版*社區網站
+	AddNB				總幹事提醒
+	Add					新增社區
+	List_E				編輯社區
+		Manager_Edit			負責人
+	Building_Employee	設定管轄社區
+	List_E				編輯管轄社區*編輯社區資訊
+		複雜的功能
+	Building_Color		社區色系
+	AreaType			社區區域
+	Lottery				開獎資訊
+	List_P				社區列印*完整版
+		List_PS				簡單版
+	index_Store			社區商務
+		Building_Store		預覽*社區商務
+	?AddNA				最新消息*群發公告
+		EditNA				刪除公告
+	?index_S			社區店家設定
+	?AddNA1				活動報報*群發活動
+		EditNA1				刪除活動
+		BCategory1			活動類型
+	?AddNA2				發燒分享*群發分享
+		EditNA2				刪除分享
+		BCategory2			分享類型
+Notice		公司訊息
+	*List				公司訊息
+	Add					新增訊息
+	List_E				編輯訊息
+	Category			編輯類別
+	Notice_Position		瀏覽公告設定
+System		網站資訊
+	*Info				網站資訊
+Store		店家管理
+	*index				店家管理
+	S_Style				版型管理
+	S_Bg				背景管理
+	Add					新增店家
+	List_E				編輯店家
+	List_M				菜單網分類
+	List_Contract		店家合約
+Link		管告管理
+	*index				廣告管理
+	LinkType			廣告分類
+	Add					新增連結
+	List_E				編輯連結
+Ericfo		團購店家
+	*index				團購店家
+	Add					新增店家
+	List_E				編輯店家
+	EStoreType			編輯店家類別
+BRoot	x大樓權限
+	*index				x大樓權限
+	index_R				設定主選單
+	index_M				設定次選單
+	List_R				社區主選單
+		Add
+	List_M				社區次選單
+		Add_M
+	List_C				選單複製
+Member	社區住戶
+	*index				社區住戶
+		List_Member
+	index_Add			新增住戶
+		Add_W
+	List_E				住戶列印
+		List_Member1
+	?List_Email			住戶郵件
+Member	轄下社區
+	*index_P			社區住戶
+	index_P				社區住戶
+		List_MemberP		轄下社區住戶
+			EditP				編輯轄下住戶
+House	租售徵才
+	*index				租售徵才
+	index_Add			新增租售徵才
+		AddH				新增租售資訊
+登出	/
+	*index				登出
