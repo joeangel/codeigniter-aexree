@@ -9,6 +9,9 @@ class Test extends CI_Controller {
 			"index",
 			"bootstrap",
 			"community",
+			"login",
+			"admin",
+			"adminnavbar",
 		);
 		$this->load->library('verify');
 		$this->verify->controller_method($this, $_allow_methods);
@@ -37,5 +40,32 @@ class Test extends CI_Controller {
 		);
 		$this->load->helper('url');
 		$this->load->view('community', $_view_data);
+	}
+
+	public function login()
+	{
+		$_view_data = array(
+			'title'		=> 'Login page',
+		);
+		$this->load->helper('url');
+		$this->load->view('login', $_view_data);
+	}
+
+	public function admin()
+	{
+		$_view_data = array(
+			'title'		=> 'Admin page',
+		);
+		$this->load->helper('url');
+		$this->load->view('admin', $_view_data);
+	}
+
+	public function adminnavbar()
+	{
+		$_view_data = array(
+			'title'		=> 'Admin page: navbar',
+		);
+		$this->load->helper('url');
+		$this->load->view('adminnavbar', $_view_data);
 	}
 }
