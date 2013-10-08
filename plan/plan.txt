@@ -4,44 +4,44 @@ http://www.student.tw/forum23/thread174156.html
 http://www.ericfo.com.tw/SMAUSW/
 
 online DB
-ºŞ²z­û±b¸¹¤ÎÅv­­³]©w
-¦í¤áºŞ²z	res*
-ªù¸T¥dºŞ²z	key*
-°Ó®aºŞ²z	house_shop ­ş­Ó°Ó®a¦b­ş­Ó¦a§}
+ç®¡ç†å“¡å¸³è™ŸåŠæ¬Šé™è¨­å®š
+ä½æˆ¶ç®¡ç†	res*
+é–€ç¦å¡ç®¡ç†	key*
+å•†å®¶ç®¡ç†	house_shop å“ªå€‹å•†å®¶åœ¨å“ªå€‹åœ°å€
 
 
 
 
-[¨t²Î³W®æ]
+[ç³»çµ±è¦æ ¼]
 CodeIgniter	2.1.4
 PHP		5.3.3
 MySQL		5.1.69
 
 
 
-[¥\¯à]
-1. ³]©w
-	a. ³]©wªÀ°ÏªºIP¥Õ¦W³æ
-	b. ³]©wªÀ°Ïªº±b¸¹«e«áºó¡B¸ê®Æ®w¦WºÙ
-	c. ³]©wªÀ°Ï¦W¦r¡Bºô§}
-	d. ¨C­ÓªÀ°Ï­º­¶¯àÅã¥Üªº¿ï³æ¤Î¦¸¿ï³æ
-2. ®Ú¾Ú¿³½ìÅã¥Ü¦í¤á email ¤Î ©±®a
-3. ¨C­ÓªÀ°Ï¹ïÀ³ªº°Ó©±
-	¬°¤FÅı¨Ï¥ÎªÌ¿é¤J¸ê®Æ®É¥i¿ï¾Ü	ae.aexree.com.tw
+[åŠŸèƒ½]
+1. è¨­å®š
+	a. è¨­å®šç¤¾å€çš„IPç™½åå–®
+	b. è¨­å®šç¤¾å€çš„å¸³è™Ÿå‰å¾Œç¶´ã€è³‡æ–™åº«åç¨±
+	c. è¨­å®šç¤¾å€åå­—ã€ç¶²å€
+	d. æ¯å€‹ç¤¾å€é¦–é èƒ½é¡¯ç¤ºçš„é¸å–®åŠæ¬¡é¸å–®
+2. æ ¹æ“šèˆˆè¶£é¡¯ç¤ºä½æˆ¶ email åŠ åº—å®¶
+3. æ¯å€‹ç¤¾å€å°æ‡‰çš„å•†åº—
+	ç‚ºäº†è®“ä½¿ç”¨è€…è¼¸å…¥è³‡æ–™æ™‚å¯é¸æ“‡	ae.aexree.com.tw
 
-[¨ä¥L]
-ºô§}ºŞ²z GoDaddy
+[å…¶ä»–]
+ç¶²å€ç®¡ç† GoDaddy
 MyISAM => InnoDB
 http://stackoverflow.com/questions/3856435/how-to-convert-all-tables-from-myisam-into-innodb
 MySQL Backup
 http://veryi.com/w/63.html
 http://g.51cto.com/vfast/245370/3
 
-[ª`·N] InnoDB
-1. InnoDB °µ count(*) ®É, ¦³ where ®É©M MyISAM ¤@¼Ë­n±½¥şªí, µL where ©Ê¯à¤ñ MyISAM ®t
-2. delete ®É InnoDB ·|¤@¦æ¦æ§R°£, MyISAM ·|­«·s«Ø¥ßªí
-3. °õ¦æ SQL ®É MYSQL ¤£¯à½T©w±½´y½d³ò, InnoDB ·|Âê¥şªí
-4. InnoDB where Primity Key ¤~·|Âê row
+[æ³¨æ„] InnoDB
+1. InnoDB åš count(*) æ™‚, æœ‰ where æ™‚å’Œ MyISAM ä¸€æ¨£è¦æƒå…¨è¡¨, ç„¡ where æ€§èƒ½æ¯” MyISAM å·®
+2. delete æ™‚ InnoDB æœƒä¸€è¡Œè¡Œåˆªé™¤, MyISAM æœƒé‡æ–°å»ºç«‹è¡¨
+3. åŸ·è¡Œ SQL æ™‚ MYSQL ä¸èƒ½ç¢ºå®šæƒæç¯„åœ, InnoDB æœƒé–å…¨è¡¨
+4. InnoDB where Primity Key æ‰æœƒé– row
 
 [SEO]
 1. http://seo.dns.com.tw/?p=155
@@ -51,80 +51,82 @@ http://blog.sina.com.cn/s/blog_666689090101bg8p.html
 [DNS]
 http://www.9bi.com.cn/post/24.html
 
-[®Ä¯à¤Î§Ş³N°İÃD]
-1. ±HÂ²°T queue
+[æ•ˆèƒ½åŠæŠ€è¡“å•é¡Œ]
+1. å¯„ç°¡è¨Š queue
 	php message queue: Gearman
-2. RAM ¤£°÷½Õ¾ã MySQL ®Ä¯à
-	a. ¬d¸ß¶q¤j&¤£±`ÅÜ°Ê¸ê®Æªº­¶­±¡A¨Ï¥Î¼È¦s­¶­±´î¤Ö DB ¦s¨ú¦¸¼Æ
-	b. ±N Table Type ±q MyISAM ´«¦¨ InnoDB
+2. RAM ä¸å¤ èª¿æ•´ MySQL æ•ˆèƒ½
+	a. æŸ¥è©¢é‡å¤§&ä¸å¸¸è®Šå‹•è³‡æ–™çš„é é¢ï¼Œä½¿ç”¨æš«å­˜é é¢æ¸›å°‘ DB å­˜å–æ¬¡æ•¸
+	b. å°‡ Table Type å¾ MyISAM æ›æˆ InnoDB
 		frequent select queries 		=> MyISAM
 		frequent insert,update,delete	=> InnoDB
 		mycom.login_log
-		?*.mail ·|¨Ï¥Î¨ì§R°£ªº°Ê§@?
-	c. *.resident ©M *.resident_shop Äæ¦ì­«½Æ©Ê¤Ó°ª
+		?*.mail æœƒä½¿ç”¨åˆ°åˆªé™¤çš„å‹•ä½œ?
+	c. *.resident å’Œ *.resident_shop æ¬„ä½é‡è¤‡æ€§å¤ªé«˜
 3. google picasa flash player => html5
 	google feed api
 
-[°İÃD]
-1. ¥Ø«e·s¼W¤@­ÓªÀ°Ïªº¬yµ{¡H
-	a. «á¥x·s¼WªÀ°Ï(¨Ã³]©wºô°ì¦WºÙ) => §¹¦¨
-	b. «á¥x·s¼WªÀ°Ï(¨Ã³]©wºô°ì¦WºÙ) => ½Ğ©ö§QµØ³]©w DNS => §¹¦¨
-2. ­û¤uºŞ²z, ÁõÄİ°Ï°ì, ºŞÁÒ°Ï°ì ¦³¦b¨Ï¥Î?
-3. ­û¤uºŞ²z, ³¡ªù ¦³¦b¨Ï¥Î?
+[å•é¡Œ]
+1. ç›®å‰æ–°å¢ä¸€å€‹ç¤¾å€çš„æµç¨‹ï¼Ÿ
+	a. å¾Œå°æ–°å¢ç¤¾å€(ä¸¦è¨­å®šç¶²åŸŸåç¨±) => å®Œæˆ
+	b. å¾Œå°æ–°å¢ç¤¾å€(ä¸¦è¨­å®šç¶²åŸŸåç¨±) => è«‹æ˜“åˆ©è¯è¨­å®š DNS => å®Œæˆ
+2. å“¡å·¥ç®¡ç†, éš¸å±¬å€åŸŸ, ç®¡è½„å€åŸŸ æœ‰åœ¨ä½¿ç”¨?
+3. å“¡å·¥ç®¡ç†, éƒ¨é–€ æœ‰åœ¨ä½¿ç”¨?
 
-[¬yµ{]
-1. [°İÃD]
-2. [®Ä¯à¤Î§Ş³N°İÃD]2
+[æµç¨‹]
+1. [å•é¡Œ]
+2. [æ•ˆèƒ½åŠæŠ€è¡“å•é¡Œ]2
 3. 
 
-ªÀ°ÏºŞ²z
-	ªÀ°Ï°ò¥»¸ê®Æ
-		­ì DB => cache => show¡A¦pªG»İ­n³Q update($_POST != cached_data) ¤~ conn db
-	ºô§}¹ïÀ³	=> ¥Î DNS ³]©w, Á×§KÀÉ®×¹ê»Ú¸ô®|³Qª¦ÂÎª¦¨ì¡B§Q©ó SEO
-	Á`·F¨Æ´£¿ô
-	³Ì·s¤½§i
-	¬¡°Ê³ø³ø
-	µo¿N¤À¨É
-	¨ä¥L³sµ²³]©w
-	°O¿ı blogger ±b±K
-¦í¤á¸ê®Æ
-	¬°¤F«áÄòªº¥\¯à([¥\¯à]2: ®Ú¾Ú¿³½ìÅã¥Ü¦í¤á email ¤Î ©±®a)
-	°µ cache¡A®É¶¡¹L¤F¤@­Ó¤p®É¤~­«·s¦Ü©Ò¦³ªÀ°Ïªº DB §ì¨ú¸ê®Æ
-©±®aºŞ²z
+ç¤¾å€ç®¡ç†
+	ç¤¾å€åŸºæœ¬è³‡æ–™
+		åŸ DB => cache => showï¼Œå¦‚æœéœ€è¦è¢« update($_POST != cached_data) æ‰ conn db
+	ç¶²å€å°æ‡‰	=> ç”¨ DNS è¨­å®š, é¿å…æª”æ¡ˆå¯¦éš›è·¯å¾‘è¢«çˆ¬èŸ²çˆ¬åˆ°ã€åˆ©æ–¼ SEO
+	ç¸½å¹¹äº‹æé†’
+	æœ€æ–°å…¬å‘Š
+	æ´»å‹•å ±å ±
+	ç™¼ç‡’åˆ†äº«
+	å…¶ä»–é€£çµè¨­å®š
+	è¨˜éŒ„ blogger å¸³å¯†
+ä½æˆ¶è³‡æ–™
+	ç‚ºäº†å¾ŒçºŒçš„åŠŸèƒ½([åŠŸèƒ½]2: æ ¹æ“šèˆˆè¶£é¡¯ç¤ºä½æˆ¶ email åŠ åº—å®¶)
+	åš cacheï¼Œæ™‚é–“éäº†ä¸€å€‹å°æ™‚æ‰é‡æ–°è‡³æ‰€æœ‰ç¤¾å€çš„ DB æŠ“å–è³‡æ–™
+åº—å®¶ç®¡ç†
 Email
-	®Ú¾Ú¿³½ì¬d¦í¤á email, ©±®a
-µoÂ²°T
-	[®Ä¯à¤Î§Ş³N°İÃD]1
+	æ ¹æ“šèˆˆè¶£æŸ¥ä½æˆ¶ email, åº—å®¶
+ç™¼ç°¡è¨Š
+	[æ•ˆèƒ½åŠæŠ€è¡“å•é¡Œ]1
 
-[µ{¦¡]
+[ç¨‹å¼]
 model
 library
 	gearman	# message queue
 	database
-		¥ı¹L¼{ 0x, ¦A¶]¨ä¥L¹L¼{¨ç¼Æ
+		å…ˆéæ…® 0x, å†è·‘å…¶ä»–éæ…®å‡½æ•¸
 	cache
 		http://justcoding.iteye.com/blog/582987
 controller
 view
 assert
 
-[¬[ºc³]­p]
+[æ¶æ§‹è¨­è¨ˆ]
 1. htaccess
 	http://undefinedblog.com/2012/04/%E5%88%A9%E7%94%A8-htaccess%E6%96%87%E4%BB%B6%E5%B0%86%E5%A4%9A%E4%B8%AA%E5%AD%90%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E8%87%B3%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AD%90%E7%9B%AE%E5%BD%95/
 	http://www.sky84.cn/blog/archives/132.html
 
 [Test]
-1. autoload ·|±N library|model °µ reference ¨ì $this ?
-2. admin ¥\¯à­n«ç»ò¤Á¦¨¼Æ­ÓÀÉ®×, ÁÙ¬O­n¼g¦b¦P­ÓÀÉ®×?
-	a. always top: ¼ĞÃD¡B±b¸¹³]©w¡Bµn¤J/µn¥X (Mega)
+1. autoload æœƒå°‡ library|model åš reference åˆ° $this ?
+2. admin åŠŸèƒ½è¦æ€éº¼åˆ‡æˆæ•¸å€‹æª”æ¡ˆ, é‚„æ˜¯è¦å¯«åœ¨åŒå€‹æª”æ¡ˆ?
+	a. always top: æ¨™é¡Œã€å¸³è™Ÿè¨­å®šã€ç™»å…¥/ç™»å‡º (Mega)
 	b. left:
-		¾ğª¬
-		©¹¥ªÁôÂÃ ¬°¤F¥kÃä¨¬°÷¤jªº¦ì¸mÅã¥Üªí®æ
+		æ¨¹ç‹€
+		å¾€å·¦éš±è— ç‚ºäº†å³é‚Šè¶³å¤ å¤§çš„ä½ç½®é¡¯ç¤ºè¡¨æ ¼
 	c. right:
-		ÄÑ¥]®h
-	d: message queue: ³B²z¨Æ±¡ªº queue
+		éºµåŒ…å±‘
+	d: message queue: è™•ç†äº‹æƒ…çš„ queue
 3. google analyze
 
+[TODO]
+1. ä½¿ç”¨ CI css, åœ¨ Container å…§åŒ… bootstrap çš„ span12
 
 
 
