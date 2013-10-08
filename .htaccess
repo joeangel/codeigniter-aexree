@@ -1,0 +1,23 @@
+
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks -Indexes
+	ErrorDocument 403 /ci/index\.php
+
+	RewriteEngine on
+	RewriteBase /ci
+	RewriteRule ^index\.php$ - [L]
+	RewriteCond $1 ^(user_guide)
+	#RewriteCond %{REMOTE_ADDR} ^127\.0\.0\.1 [OR]
+	#RewriteCond %{REMOTE_ADDR} ^192\.168\.99\.
+	RewriteCond %{REMOTE_ADDR} ^127\.0\.0\.1
+	RewriteRule ^(.*)$ $1 [L]
+	RewriteCond $2 !^(index\.php\.htaccess|robots\.txt)
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index\.php/$2 [QSA,L]
+	RewriteCond %{REQUEST_URI} !^/ci/assets/css/([^/]*)\.css$
+	RewriteCond %{REQUEST_URI} !^/ci/assets/img/([^/]*)\.(jpg|png|gif)$
+	RewriteCond %{REQUEST_URI} !^/ci/assets/js/([^/]*)\.js$
+	RewriteRule ^ index\.php [NC,L]
+	# other :allow assess REQUEST_URI
+</IfModule>
