@@ -27,8 +27,25 @@
 			<li><a href="http://www.ericfo.com.tw/SMAUSW/Building/Show2.aspx?Building_SID=B000000088">aexree/長安科博社區官方網站</a></li>
 			<li><a href="<?=base_url(); ?>test/community">ci/長安科博社區官方網站</a></li>
 			<li><a href="http://www.responsinator.com/?url=http://localhost/ci/test/community">mobile/長安科博社區官方網站</a></li>
+			<li><a href="<?=base_url(); ?>test/login">Login Page</a></li>
+			<li><a href="<?=base_url(); ?>test/admin">Admin Page</a></li>
+			<li><a href="<?=base_url(); ?>test/adminnavbar">Admin Page: navbar</a></li>
 		</ul>
 
+		<p>SideBar TODO</p>
+		<ul>
+			<li><a href="http://bootply.com/72086">可摺疊</a></li>
+			<li><a href="http://bootply.com/83798">可摺疊2</a></li>
+			<li><a href="http://bootply.com/83802">可摺疊3</a></li>
+			<li><a href="http://bootply.com/72929">*可摺疊4</a></li>
+			<li><a href="http://jsfiddle.net/luismruiz/YRVev/">*可摺疊5</a></li>
+			<li><a href="http://bootply.com/69834">Step</a></li>
+			<li><a href="http://bootply.com/74391">Step2</a></li>
+			<li><a href="http://bootply.com/65023">always top nav</a></li>
+			<li><a href="http://bootply.com/73231">always top nav2</a></li>
+			<li><a href="http://jsfiddle.net/Osis/Mns8q/">往左收</a></li>
+			<li><a href="http://webdesignerwall.com/tutorials/responsive-design-with-css3-media-queries">Responsive Design with CSS3 Media Queries</a></li>
+		</ul>
 		<p>w3schools webpage link</p>
 		<ul>
 			<li><a href="http://www.w3schools.com/html/default.asp">html</a></li>
