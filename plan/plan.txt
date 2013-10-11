@@ -127,7 +127,8 @@ assert
 
 [TODO]
 1. 使用 CI css, 在 Container 內包 bootstrap 的 span12
-
+2. community jQuery 換頁功能
+3. view cache
 
 
 
