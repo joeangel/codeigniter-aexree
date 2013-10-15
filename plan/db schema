@@ -55,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 -- Table structure for table `aexree_usermeta`
 -- 個人資料其他欄位
+-- 其中一個 meta_key 是 capability
 --
 
 CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
@@ -70,15 +71,18 @@ CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aexree_role_level`
--- 角色等級
--- ex: 總公司,都市,區域,部門,員工
+-- Table structure for table `aexree_role_catelog`
+-- 角色等級分類
+-- ex: 管理員(0),總公司(1),都市(2),區域(3),部門(4),員工(5)
+--     其中, 數字高不可是數字低的領導
 --
 
-CREATE TABLE IF NOT EXISTS `aexree_role_level` (
-  `rlevel_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `rlevel_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`rlevel_id`),
+CREATE TABLE IF NOT EXISTS `aexree_role_catelog` (
+  `rcatelog_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `rcatelog_level` int(10) unsigned NOT NULL DEFAULT '0',
+  `rcatelog_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`rcatelog_id`),
+  KEY `rcatelog_level` (`rcatelog_level`),
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -86,31 +90,67 @@ CREATE TABLE IF NOT EXISTS `aexree_role_level` (
 --
 -- Table structure for table `aexree_role`
 -- 角色
--- ex: (角色等級為都市)且角色為台中市,高雄市;
---     (角色等級為區域
--f
+-- ex: (角色等級為管理員)且(角色上司為0)且角色為管理員;
+--     (角色等級為總公司)且(角色上司為管理員)且角色為總公司;
+--     (角色等級為都市)且(角色上司為總公司)且角色為台中市;
+--     (角色等級為區域)且(角色上司為台中市)且角色為西區;
+--     (角色等級為部門)且(角色上司為西區)且角色為行政;
+--     (角色等級為員工)且(角色上司為部門)且角色為美工;
+--
 
 CREATE TABLE IF NOT EXISTS `aexree_role` (
   `role_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `role_level_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `role_catelog_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `role_leading` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `role_capability` longtext COLLATE utf8_unicode_ci,
   `role_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`rlevel_id`),
+  PRIMARY KEY (`role_id`),
+  KEY `role_catelog_id` (`role_catelog_id`),
+  KEY `role_leading` (`role_leading`),
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+
+
+
+
+
 --
--- Table structure for table `aexree_rolemeta`
+-- Table structure for table `wp_posts`
 -- 
 --
 
-CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
-  `rmeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `role_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `meta_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `meta_value` longtext COLLATE utf8_unicode_ci,
-  PRIMARY KEY (`rmeta_id`),
-  KEY `role_id` (`role_id`),
-  KEY `meta_key` (`meta_key`)
+CREATE TABLE IF NOT EXISTS `wp_posts` (
+  `ID` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `post_author` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `post_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `post_content` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `post_title` text COLLATE utf8_unicode_ci NOT NULL,
+  `post_excerpt` text COLLATE utf8_unicode_ci NOT NULL,
+  `post_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'publish' COMMENT '{auto-draft,draft,future,inherit,private,publish,trash}',
+  `comment_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'open' COMMENT '{closed,open}',
+  `ping_status` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'open' COMMENT '{closed,open}',
+  `post_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+-- ping_status: closed => post_password != '', open => post_password = ''
+  `post_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT 'urlencode',
+  `post_modified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `post_parent` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `guid` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '該 post 的網址',
+  `menu_order` int(11) NOT NULL DEFAULT '0',
+  `post_type` varchar(20) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'post' '{attachment,page,revision,shop_order,post,wpsc-product,product}',
+  `post_mime_type` varchar(100) COLLATE utf8_unicode_ci NOT NULL DEFAULT '' COMMENT '{,image/jpeg,image/png}',
+  `comment_count` bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ID`),
+  KEY `post_name` (`post_name`),
+  KEY `type_status_date` (`post_type`,`post_status`,`post_date`,`ID`),
+-- http://miggo.pixnet.net/blog/post/30862194
+  KEY `post_parent` (`post_parent`),
+  KEY `post_author` (`post_author`),
+  FULLTEXT KEY `yarpp_title` (`post_title`),
+  FULLTEXT KEY `yarpp_content` (`post_content`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
 
 
 
