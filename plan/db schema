@@ -10,13 +10,13 @@
 --
 -- db schema
 --
--- 使用 MySQL Workbench 管理 MySQL
+-- use MySQL Workbench to manage MySQL
 -- http://chiangchingchi.pixnet.net/blog/post/40959590
 --
--- 快速繪製 Db Schema(ERD) 的軟體 - DbSchema
+-- quick draw  Db Schema(ERD) software - DbSchema
 -- http://blog.longwin.com.tw/2009/08/linux-draw-db-schema-tool-2009/
 --
--- mysql 語法
+-- mysql grammar
 -- http://www.hmes.kh.edu.tw/~jona/redhat/mysqlphp/mysqlsyntax.htm
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -41,7 +41,6 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `user_login` varchar(60) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `user_pass` varchar(32) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `user_nicename` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `user_email` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `user_registered` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `user_status` int(11) NOT NULL DEFAULT '0',
@@ -55,6 +54,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 --
 -- Table structure for table `aexree_usermeta`
+-- 個人資料其他欄位
 --
 
 CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
@@ -65,8 +65,52 @@ CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
   PRIMARY KEY (`umeta_id`),
   KEY `user_id` (`user_id`),
   KEY `meta_key` (`meta_key`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10351 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aexree_role_level`
+-- 角色等級
+-- ex: 總公司,都市,區域,部門,員工
+--
+
+CREATE TABLE IF NOT EXISTS `aexree_role_level` (
+  `rlevel_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `rlevel_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`rlevel_id`),
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aexree_role`
+-- 角色
+-- ex: (角色等級為都市)且角色為台中市,高雄市;
+--     (角色等級為區域
+-f
+
+CREATE TABLE IF NOT EXISTS `aexree_role` (
+  `role_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `role_level_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `role_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`rlevel_id`),
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+--
+-- Table structure for table `aexree_rolemeta`
+-- 
+--
+
+CREATE TABLE IF NOT EXISTS `aexree_usermeta` (
+  `rmeta_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `role_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `meta_key` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_value` longtext COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`rmeta_id`),
+  KEY `role_id` (`role_id`),
+  KEY `meta_key` (`meta_key`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 
 
