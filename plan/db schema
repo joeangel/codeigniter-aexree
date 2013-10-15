@@ -103,13 +103,13 @@ CREATE TABLE IF NOT EXISTS `aexree_role_catalog` (
 --
 
 CREATE TABLE IF NOT EXISTS `aexree_role` (
-  `role_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `role_catalog_id` bigint(20) unsigned NOT NULL DEFAULT '0',
   `role_leading` bigint(20) unsigned NOT NULL DEFAULT '0',
   `role_capability` longtext COLLATE utf8_unicode_ci,
   `role_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`role_id`),
-  KEY `role_catelog_id` (`role_catelog_id`),
+  PRIMARY KEY (`id`),
+  KEY `role_catalog_id` (`role_catalog_id`),
   KEY `role_leading` (`role_leading`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
@@ -200,36 +200,46 @@ CREATE TABLE IF NOT EXISTS `aexree_community_post` (
 --
 
 CREATE TABLE IF NOT EXISTS `aexree_role_catalog` (
-  `pcatelog_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `pcatalog_level` int(11) unsigned NOT NULL DEFAULT '0',
+  `pcatalog_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `pcatalog_allocation` int(11) NOT NULL DEFAULT '1' COMMENT '配給量, 多少未分配點數可換得一點',
   `pcatalog_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`pcatalog_id`),
-  KEY `pcatalog_level` (`pcatalog_level`)
+  `pcatalog_memo` longtext COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`pcatalog_id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `aexree_role`
--- 角色
--- ex: (角色等級為管理員)且(角色上司為0)且角色為管理員;
---     (角色等級為總公司)且(角色上司為管理員)且角色為總公司;
---     (角色等級為都市)且(角色上司為總公司)且角色為台中市;
---     (角色等級為區域)且(角色上司為台中市)且角色為西區;
---     (角色等級為部門)且(角色上司為西區)且角色為行政;
---     (角色等級為員工)且(角色上司為部門)且角色為美工;
+-- Table structure for table `aexree_point`
+-- 點數
 --
 
-CREATE TABLE IF NOT EXISTS `aexree_role` (
-  `role_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `role_catalog_id` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `role_leading` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `role_capability` longtext COLLATE utf8_unicode_ci,
-  `role_display_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  PRIMARY KEY (`role_id`),
-  KEY `role_catelog_id` (`role_catelog_id`),
-  KEY `role_leading` (`role_leading`)
+CREATE TABLE IF NOT EXISTS `aexree_point` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `point_catalog_id` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `point_due_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `point_last_bought_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`),
+  KEY `point_catalog_id` (`point_catalog_id`),
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aexree_point_log`
+-- 點數異動記錄 log
+-- 店家名稱
+-- 點數種類
+-- 異動數量(購買or消費or轉換點數)
+-- 日期時間
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `aexree_point`
+-- 點數
+--
 
 
 
