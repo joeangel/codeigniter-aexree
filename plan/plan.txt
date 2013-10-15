@@ -129,7 +129,7 @@ assert
 1. 使用 CI css, 在 Container 內包 bootstrap 的 span12
 2. community jQuery 換頁功能
 3. view cache
-
+4. 社區網頁的公告 list, 滑鼠移到 a link 會出現 alt 效果
 
 
 
