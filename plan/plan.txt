@@ -100,10 +100,18 @@ Email
 model
 library
 	gearman	# message queue
+		http://www.slideshare.net/appleboy/gearman-26883869
 	database
 		先過慮 0x, 再跑其他過慮函數
 	cache
 		http://justcoding.iteye.com/blog/582987
+	sms
+	google email
+	Aauth User Authorization and Authentication Library
+		https://github.com/EllisLab/CodeIgniter/wiki/Aauth-User-Authorization-and-Authentication-Library
+	ip
+	qrcode
+		https://github.com/dwisetiyadi/CodeIgniter-PHP-QR-Code
 controller
 view
 assert
@@ -130,7 +138,9 @@ assert
 2. community jQuery 換頁功能
 3. view cache
 4. 社區網頁的公告 list, 滑鼠移到 a link 會出現 alt 效果
-
-
+5. mysql set concurrent_insert=2
+6. codeigniter wkik
+	https://github.com/EllisLab/CodeIgniter/wiki/_pages
+7. 
 
 
