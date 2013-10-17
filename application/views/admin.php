@@ -261,6 +261,7 @@ $( "a.btn.menu-icon" ).click(function() {
 $('[data-toggle=collapse]').click(function(){
 	// toggle icon
 	$(this).find("i").toggleClass("icon-arrow-right icon-arrow-down");
+	$( "#result" ).html($(this).find("i").hasClass("icon-arrow-right"));
   
 });
 
