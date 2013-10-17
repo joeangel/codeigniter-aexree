@@ -10,88 +10,153 @@
 	<link rel="shortcut icon" href="<?=base_url(); ?>favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="<?=base_url(); ?>assets/css/bootstrap.min.css" media="screen">
 	<link rel="stylesheet" href="<?=base_url(); ?>assets/css/aexree.css" media="screen">
-	<style type="text/css">
-	header{
-	height:100px;
-	}
-	.bs-docs-sidenav.affix {
-	top: 10px;
-	}
-	@media (min-width: 1200px) {
-	.bs-docs-sidenav {
-	width: 258px;
-	}
-	.bs-docs-sidenav {
-	width: 228px;
-	margin: 10px 0 0;
-	padding: 0;
-	background-color: #fff;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
-	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	box-shadow: 0 1px 4px rgba(0,0,0,.065);
-	}
-	.affix {
-	position: fixed;
-	}
-	}
-
-
-
+	<style>
 	</style>
 </head>
 <body>
-
-<header> 
-<div class="well"> 
-	<h2>Header</h2>
+<div class="wrapper">
+	<div class="navbar navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="<?=base_url(); ?>">瑞士管家</a>
+				<a class="btn menu-icon" href="#" data-toggle="button"><i class="icon icon-th-list"></i></a>
+				<ul id="user-links" class="nav pull-right">
+					<li><a href="#"><img height="20" width="20" src="#">JoeAngel.tw</a></li>
+					<li><a href="#">Queue status</a></li>
+					<li><a href="#">Account settings</a></li>
+					<li><a href="#">Sign out</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
 </div>
-</header>
-
-<div class="navbar navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#">Roux Academy Conference</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-		<li class="active"><a href="#">Home</a> </li>
-      	<li><a href="#">The Artists</a></li>
-        <li><a href="#">The Art</a></li>
-        <li><a href="#">Schedule</a></li>
-        <li><a href="#">Venue</a></li>
-        <li><a href="#">Hotels</a></li>
-		</ul>
-      </div>
-    </div>
-  </div>
+<div id="result">
+123
 </div>
-
-<script>
-//$('#navbar').affix();
-</script>
-
-
 <div class="container">
 <div class="row">
+	<div id="menu" class="span3 hide">
+		<h1>Menu</h1>
+		<div class="nav">
+			<ul>
+			<li class="nav-header">
+				<a href="#" data-toggle="collapse" data-target="#userMenu">
+					User <i class="icon-arrow-down"></i>
+				</a>
+				<ul style="list-style: none;" class="collapse in" id="userMenu">
+					<li class="active"><a href="#"><i class="icon-home"></i>Home</a></li>
+					<li><a href="#"><i class="icon-envelope-alt"></i>Messages <span class="badge badge-info">4</span></a></li>
+					<li><a href="#"><i class="icon-cogs"></i>Settings</a></li>
+					<li><a href="#"><i class="icon-comment"></i>Shoutbox</a></li>
+					<li><a href="#"><i class="icon-user"></i>Staff List</a></li>
+					<li><a href="#"><i class="icon-flag"></i>My Infractions</a></li>
+					<li><a href="#"><i class="icon-exclamation-sign"></i>Rules &amp; Regulations</a></li>
+					<li><a href="#"><i class="icon-off"></i>Logout</a></li>
+				</ul>
+			</li>
+			<li class="nav-header">
+				<a href="#" data-toggle="collapse" data-target="#radioDJMenu">
+					Radio DJ <i class="icon-arrow-right"></i>
+				</a>
+				<ul style="list-style: none;" class="collapse" id="radioDJMenu">
+					<li><a href="#">Information &amp; Stats</a></li>
+					<li><a href="#">DJ Says</a></li>
+					<li><a href="#">Request Line</a></li>
+					<li><a href="#">Timetable</a></li>
+					<li><a href="#">Banned Songs</a></li>
+				</ul>
+			</li>
+			<li class="nav-header">
+				<a href="#" data-toggle="collapse" data-target="#headDJMenu">
+					Head DJ <i class="icon-arrow-right"></i>
+				</a>
+				<ul style="list-style: none;" class="collapse" id="headDJMenu">
+					<li><a href="#"><i class="icon-"></i>All Banned Songs</a></li>
+				</ul>
+			</li>
+			</ul>
+		</div>
 
-	<div class="span3 bs-docs-sidebar">
-		<ul class="nav nav-list bs-docs-sidenav affix-top" data-spy="affix" data-offset-top="100">
-			<li class="header"><h3>Sidebar</h3></li>
-			<li class="active"><a href="#global"><i class="icon-chevron-right"></i> Global styles</a></li>
-			<li><a href="#gridSystem"><i class="icon-chevron-right"></i> Grid system</a></li>
-			<li><a href="#fluidGridSystem"><i class="icon-chevron-right"></i> Fluid grid system</a></li>
-			<li><a href="#layouts"><i class="icon-chevron-right"></i> Layouts</a></li>
-			<li><a href="#responsive"><i class="icon-chevron-right"></i> Responsive design</a></li>
-		</ul>
 	</div>
-	<div class="span9">
+	<div id="main" class="span12">
+		<h1>Main</h1>
+		Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+
+		<br>
+
+		Eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+
+		<br>
+
+		Qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+		<br>
+		    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+		dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia cor magni dolores 
+		eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, 
+		sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. 
+		Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+    
+	</div>
+	<div class="span12">
 		<h1>Main</h1>
 		Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
 		totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -171,8 +236,50 @@
 	</div>
 </div>
 </div>
-
+<div id="fullscreen-overlay">
+</div>
+<div id="ajax-error-message">
+</div>
+<div id="facebox">
+</div>
 <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="<?=base_url(); ?>assets/js/bootstrap.min.js"></script>
+<script>
+$( "a.btn.menu-icon" ).click(function() {
+	if($("#menu").hasClass('hide')){
+		$("#main").removeClass('span12').addClass('span9');
+		$("#menu").removeClass('hide');
+	}else{
+		$("#main").removeClass('span9').addClass('span12');
+		$("#menu").addClass('hide');
+	}
+	var color = $( this ).css( "background-color" );
+	$( "#result" ).html( "That div is <span style='color:" +
+	color + ";'>" + color + "</span>.");
+});
+
+$('[data-toggle=collapse]').click(function(){
+	// toggle icon
+	$(this).find("i").toggleClass("icon-arrow-right icon-arrow-down");
+  
+});
+
+$('.collapse').on('show', function (e) {
+	// hide open menus
+	$('.collapse').each(function(){
+		if ($(this).hasClass('in')) {
+			$(this).collapse('toggle');
+		}
+	});
+})
+/*
+$(document).ready(function() {
+	$('#nav-wrapper').height($("#nav").height());
+		$('#nav').affix({
+		offset: $('#nav').position()
+	});
+});
+*/
+</script>
 </body>
 </html>
